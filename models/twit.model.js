@@ -20,9 +20,15 @@ function searchTwitter(query) {
     return T.get('search/tweets', {q: query})        
 }
 
-// POst new twitter update
+// Post new twitter update
 function postTweet(status) {    
     return T.post('statuses/update', {status: status})        
+}
+
+// Send follow requests
+
+function addFriend (screen_name) {
+    return T.post('friendships/create', {screen_name: screen_name})
 }
 
 
@@ -31,5 +37,6 @@ module.exports = {
     fetchUser,
     searchUsers,
     searchTwitter,
-    postTweet
+    postTweet,
+    addFriend
 }

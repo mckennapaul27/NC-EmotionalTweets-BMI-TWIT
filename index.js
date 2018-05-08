@@ -1,10 +1,6 @@
 const util = require('util');
-const {
-    T
-} = require('./lib/twitter');
-const {
-    languageTranslator
-} = require('./lib/watson');
+const {T} = require('./lib/twitter');
+const {languageTranslator} = require('./lib/watson');
 
 function translateToSpanish(text) {
     languageTranslator.translate({

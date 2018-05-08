@@ -5,8 +5,10 @@ const {
     getUser,
     getUserByQuery,
     getTweetsByQuery,
-    createTweet
-} = require('../controllers/twit.controller');
+    createTweet,
+    createFriend,
+    createTranslatedTweets
+} = require('../controllers/main.controller');
 
 router.get('/showuser', getUser);
 
@@ -16,7 +18,11 @@ router.get('/searchusers', getUserByQuery);
 
 router.get('/searchtweets', getTweetsByQuery);
 
-router.post('/sendtweet', createTweet)
+router.post('/sendtweet', createTweet);
+
+router.post('/follow', createFriend);
+
+router.get('/translate', createTranslatedTweets);
 
 module.exports = router;
 
